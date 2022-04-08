@@ -34,11 +34,7 @@
 
     @livewireStyles
 </head>
-<style>
-	html{
-		direction: rtl;
-	}
-</style>
+
 <body id="home" class="wide">
 <!-- PRELOADER -->
 <div id="preloader">
@@ -131,11 +127,12 @@
 x
                     <li class="dropdown flags">
                         @if(Route::has('login'))
-                            @auth
+                            @auth 
                                 @if(Auth::user()->utype == 'ADM')
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Admin : ({{ Auth::user()->name }})  <i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="dropdown-menu">
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('admin.ManageMyAds') }}">All Ads</a></li>
                                         <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logouut </a></li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -145,6 +142,7 @@ x
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> User : ({{ Auth::user()->name }})  <i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="dropdown-menu">
                                         <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('user.ManageMyAds') }}">My Ads </a></li>
                                         <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logouut </a></li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -451,13 +449,24 @@ x
 
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="{{ asset('assets/plugins/jquery.cookie.js')}}"></script>
-<script src="{{ asset('assets/js/theme-config.js')}}"></script>
+<script src="https://cdn.tiny.cloud/1/hj792k117l0inekz8p0lwczrmdvvlgz7lf0vx3dooh2q937o/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js" integrity="sha512-EnXkkBUGl2gBm/EIZEgwWpQNavsnBbeMtjklwAa7jLj60mJk932aqzXFmdPKCG6ge/i8iOCK0Uwl1Qp+S0zowg==" crossorigin="anonymous"></script>
+<script src="assets/plugins/owl-carousel2/owl.carousel.min.js"></script>
+
 <!--<![endif]-->
 <script>
 $('.dropdown-toggle').dropdown()
 	</script>
 	@livewireScripts
-	
+    <script>
+		window.livewire.on('fileUploaded',()=>{
+			$('#form-upload')[0].reset();
+		});
+
+	</script>
 	@stack('scripts') 
 	</body>
 	</html>
