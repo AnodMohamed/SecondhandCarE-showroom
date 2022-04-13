@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ad extends Model
 {
     use HasFactory;
+    public function CarOwner() {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

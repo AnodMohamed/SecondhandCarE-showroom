@@ -50,6 +50,7 @@ class CreateAdsTable extends Migration
             $table->string('status')->default('Inactive');
             $table->bigInteger('admin_responsible')->nullable();
             $table->timestamps();
+            $table->bigInteger('endDeal')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

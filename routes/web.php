@@ -7,10 +7,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\User\AddAd;
 use App\Http\Livewire\User\AddAdComponent;
+use App\Http\Livewire\User\AddReviewComponent;
+use App\Http\Livewire\User\ChatComponent;
 use App\Http\Livewire\User\ManageMyAds;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\User\UserEditAdComponent;
 use App\Http\Livewire\User\UserViewAdComponent;
+use App\Http\Livewire\User\MessegesComponent;
+use App\Http\Livewire\User\ReviewComponent;
+use App\Http\Livewire\ViewAdComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +29,7 @@ use App\Http\Livewire\User\UserViewAdComponent;
 */
 
 Route::get('/', HomeComponent::class)->name('home');
+Route::get('/ad{ad_id:id}',ViewAdComponent::class)->name('ad');
 
 //admin 
 Route::middleware(['auth:sanctum','verified','authAdmin'])->group(function(){
@@ -39,5 +45,11 @@ Route::middleware(['auth:sanctum','verified','authUser'])->group(function(){
     Route::get('/user/ManageMyAds/addAd',AddAdComponent::class)->name('user.ManageMyAds.addAd');
     Route::get('/user/ManageMyAds/EditAd/{ad_id:id}',UserEditAdComponent::class)->name('user.ManageMyAds.EditAd');
     Route::get('/user/ManageMyAds/ViewAd/{ad_id:id}',UserViewAdComponent::class)->name('user.ManageMyAds.ViewAd');
+    Route::get('/user/Chat/{user_id:id}',ChatComponent::class)->name('user.Chat');
+    Route::get('/user/Messeges',MessegesComponent::class)->name('user.Messeges');
+    Route::get('/user/Reviewes',ReviewComponent::class)->name('user.Reviewes');
+    Route::get('/user/Reviewes/add/{review_id:id}',AddReviewComponent::class)->name('user.addReviewes');
 
+
+    
 });

@@ -24,6 +24,7 @@
     <link href="{{ asset('assets/css/theme.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/css/theme-green-1.css')}}" rel="stylesheet" id="theme-config-link">
 
+
     <!-- Head Libs -->
     <script src="{{ asset('assets/plugins/modernizr.custom.js')}}"></script>
 
@@ -33,7 +34,9 @@
     <![endif]-->
 
     @livewireStyles
+
 </head>
+@stack('style') 
 
 <body id="home" class="wide">
 <!-- PRELOADER -->
@@ -143,6 +146,9 @@ x
                                     <ul role="menu" class="dropdown-menu">
                                         <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('user.ManageMyAds') }}">My Ads </a></li>
+                                        <li><a href="{{ route('user.Messeges') }}">Messages </a></li>
+                                        <li><a href="{{ route('user.Reviewes') }}">My deals </a></li>
+
                                         <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logouut </a></li>
                                         <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                             @csrf
