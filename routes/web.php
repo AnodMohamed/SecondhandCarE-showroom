@@ -3,8 +3,10 @@
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminManageMyAdComponent;
 use App\Http\Livewire\Admin\AdminViewAd;
+use App\Http\Livewire\AdsComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\SearchCarComponent;
 use App\Http\Livewire\User\AddAd;
 use App\Http\Livewire\User\AddAdComponent;
 use App\Http\Livewire\User\AddReviewComponent;
@@ -30,6 +32,8 @@ use App\Http\Livewire\ViewAdComponent;
 
 Route::get('/', HomeComponent::class)->name('home');
 Route::get('/ad{ad_id:id}',ViewAdComponent::class)->name('ad');
+Route::get('/search',SearchCarComponent::class)->name('search');
+
 
 //admin 
 Route::middleware(['auth:sanctum','verified','authAdmin'])->group(function(){
@@ -50,6 +54,4 @@ Route::middleware(['auth:sanctum','verified','authUser'])->group(function(){
     Route::get('/user/Reviewes',ReviewComponent::class)->name('user.Reviewes');
     Route::get('/user/Reviewes/add/{review_id:id}',AddReviewComponent::class)->name('user.addReviewes');
 
-
-    
 });

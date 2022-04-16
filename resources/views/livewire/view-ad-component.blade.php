@@ -140,6 +140,15 @@
                             Check up 
                         </a>
                     </div>
+                    @if(Route::has('login'))
+                        @auth
+                            @if ($Ad->user_id != Auth::user()->id)
+                                <div class="buttons">
+                                    <a class="btn btn-theme btn-theme-transparent" href="{{ route('user.Chat',['user_id'=>$Ad->user_id ]) }}">Contact</a>
+                                </div>
+                            @endif                                    
+                        @endauth
+                    @endif
                     <hr class="page-divider small"/>
                     
                    

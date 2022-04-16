@@ -26,7 +26,7 @@
                     <div class="form-group af-inner">
                         <label  for="brand">Brand</label>
                         <select wire:model="brand" name="brand" id="brand" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Brand is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Brand</option>
+                            <option value="">Select </option>
                             <option value="Toyota">Toyota</option>
                             <option value="Honda">Honda</option>
                             <option value="Chevrolet">Chevrolet</option>
@@ -102,7 +102,7 @@
                     <div class="form-group af-inner">
                         <label for="exterior_color">Exterior color</label>
                         <select wire:model="exterior_color" name="exterior_color" id="exterior_color" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Exterior color is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Exterior color</option>
+                            <option value="">Select </option>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Gray">Gray</option>
@@ -129,7 +129,7 @@
                     <div class="form-group af-inner">
                         <label for="car_condition">Car conditions</label>
                         <select wire:model="car_condition" name="car_condition" id="car_condition" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Car condition color is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Car conditions</option>
+                            <option value="">Select </option>
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="I">I</option>
@@ -172,7 +172,7 @@
                     <div class="form-group af-inner">
                         <label for="regional_space">Regional space</label>
                         <select wire:model="regional_space" name="regional_space" id="regional_space" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Regional space color is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Regional space</option>
+                            <option value="">Select </option>
                             <option value="GCC Specs">GCC Specs</option>
                             <option value="European Specs">European Specs</option>
                             <option value="Japanese Specs">Japanese Specs</option>
@@ -192,7 +192,7 @@
                     <div class="form-group af-inner">
                         <label for="accident_history">Accident history</label>
                         <select wire:model="accident_history" name="accident_history" id="accident_history" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Accident history color is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Accident history</option>
+                            <option value="">Select </option>
                             <option value="Accident free">Accident free</option>
                             <option value="Yes">Yes</option>
 
@@ -207,7 +207,7 @@
                     <div class="form-group af-inner">
                         <label for="body_style"> Body Style </label>
                         <select wire:model="body_style" name="body_style" id="body_style" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="body style color is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Body Style</option>
+                            <option value="">Select </option>
                             <option value="Compact"> Compact</option>
                             <option value="Coupe">Coupe</option>
                             <option value="Crossover"> Crossover</option>
@@ -237,7 +237,7 @@
                     <div class="form-group af-inner">
                         <label for="number_of_doors">Number Of Doors  </label>
                         <select wire:model="number_of_doors" name="number_of_doors" id="number_of_doors" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Number Of Doors color is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Number Of Doors</option>
+                            <option value="">Select </option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -253,7 +253,7 @@
                     <div class="form-group af-inner">
                         <label for="fuel_type"> Fuel Type</label>
                         <select wire:model="fuel_type" name="fuel_type" id="fuel_type" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Fuel Type  is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Fuel Type</option>
+                            <option value="">Select </option>
                             <option value="Petrol">Petrol</option>
                             <option value="Diesel"> Diesel</option>
                             <option value="Hybrid">Hybrid</option>
@@ -281,7 +281,7 @@
                     <div class="form-group af-inner">
                         <label for="nunber_of_cylinders"> Nunber of cylinders  </label>
                         <select wire:model="nunber_of_cylinders" name="nunber_of_cylinders" id="fuel_type" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Nunber of cylinders is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Nunber of cylinders</option>
+                            <option value="">Select </option>
                             <option value="3">3</option>
                             <option value="4"> 4</option>
                             <option value="5">5</option>
@@ -304,7 +304,7 @@
                     <div class="form-group af-inner">
                         <label for="Transmission"> Transmission </label>
                         <select wire:model="Transmission" name="Transmission" id="Transmission" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title="Transmission  is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Transmission </option>
+                            <option value="">Select </option>
                             <option value="Automatic">Automatic</option>
                             <option value="Manual"> Manual</option>
                             <option value="CVT">CVT</option>
@@ -321,7 +321,7 @@
                     <div class="form-group af-inner">
                         <label for="drive_type">  Drive Type  </label>
                         <select wire:model="drive_type" name="drive_type" id="drive_type" class="form-control" data-toggle="tooltip" title="" class="form-control placeholder" data-original-title=" Drive type  is required" style="margin-bottom: 15px;"> 
-                            <option disabled>Drive Type </option>
+                            <option value="">Select </option>
                             <option value="Rear Wheel Drive">Rear Wheel Drive</option>
                             <option value="Front Wheel Drive"> Front Wheel Drive</option>
                             <option value="All Wheel Drive">All Wheel Drive</option>
