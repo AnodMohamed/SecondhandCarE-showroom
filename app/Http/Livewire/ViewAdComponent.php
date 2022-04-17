@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Ad;
+use App\Models\User;
 use Livewire\WithFileUploads;
 class ViewAdComponent extends Component
 {
@@ -35,7 +36,9 @@ class ViewAdComponent extends Component
     public $note;
     public $new_file;
     public $file;
+    public $user_id;
     public $ad_id;
+    public $name;
 
     public $image;
     public $images;
@@ -69,9 +72,13 @@ class ViewAdComponent extends Component
         $this->price = $ad->price;
         $this->note = $ad->note;
         $this->file = $ad->file;
-
+        $this->user_id = $ad->user_id;
+        
         $this->image = $ad->image;
         $this->images = $ad->images;
+
+        $user = User::where('id',  $this->user_id )->first();
+        $this->name =$user->name;
 
 
     }
@@ -85,6 +92,6 @@ class ViewAdComponent extends Component
     {
         $imagex = explode(',' ,$this->images);
 
-        return view('livewire.view-ad-component',['imagex'=>$imagex])->layout('layouts.base');
+        return view('livewire.view-ad-component',['imagex'=>$imagex,])->layout('layouts.base');
     }
 }

@@ -109,6 +109,7 @@
                     @auth
                         <ul class="list-inline">
                             <li><a href=""><i class="fa fa-envelope"></i> <span>showroom2022abc@gmail.com</span></a></li>
+                            <li><a href="{{ route('home') }}"> <span>Home</span></a></li>
                         </ul>
                     @else
                         <ul class="list-inline">
@@ -121,6 +122,7 @@
             </div>
             <div class="top-bar-right">
                 <ul class="list-inline">
+                    <li><a href="{{ route('home') }}"> <span>Home</span></a></li>
 
                     <li class="dropdown flags">
                       {{----   

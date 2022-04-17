@@ -57,41 +57,7 @@
 <!-- WRAPPER -->
 <div class="wrapper">
 
-    <!-- Popup: Shopping cart items -->
-    <div class="modal fade popup-cart" id="popup-cart" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="container">
-                <div class="cart-items">
-                    <div class="cart-items-inner">
-
-                        <div class="media">
-                            <a class="pull-left" href="#"><img class="media-object item-image" src="assets/img/preview/shop/order-1s.jpg" alt=""></a>
-                            <p class="pull-right item-price">$450.00</p>
-                            <div class="media-body">
-                                <h4 class="media-heading item-title"><a href="#">1x Standard Product</a></h4>
-                                <p class="item-desc">Lorem ipsum dolor</p>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <p class="pull-right item-price">$450.00</p>
-                            <div class="media-body">
-                                <h4 class="media-heading item-title summary">Subtotal</h4>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-body">
-                                <div>
-                                    <a href="#" class="btn btn-theme btn-theme-dark" data-dismiss="modal">Close</a><!--
-                                    --><a href="shopping-cart.html" class="btn btn-theme btn-theme-transparent btn-call-checkout">Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Popup: Shopping cart items -->
+ 
 
     <!-- Header top bar -->
     <div class="top-bar">
@@ -103,6 +69,8 @@
                     @auth
                         <ul class="list-inline">
                             <li><a href=""><i class="fa fa-envelope"></i> <span>showroom2022abc@gmail.com</span></a></li>
+                            <li><a href="{{ route('home') }}"> <span>Home</span></a></li>
+
                         </ul>
                     @else
                         <ul class="list-inline">
@@ -115,6 +83,7 @@
             </div>
             <div class="top-bar-right">
                 <ul class="list-inline">
+                    <li><a href="{{ route('search') }}"> <span>Search car</span></a></li>
 
                     <li class="dropdown flags">
                       {{----   
@@ -164,7 +133,7 @@
 
                 <!-- Logo -->
                 <div class="logo">
-                    <a href=""><img src="{{ asset('assets/img/logo.png')}}" alt="logo"/></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo.png')}}" alt="logo"/></a>
                 </div>
                 <!-- /Logo -->
 

@@ -62,9 +62,7 @@
                     <div class="product-text">
                         <p> Note :</p>
                         <p> {{ $note }}</p>
-                        <ul>   
-                          Fe
-                        </ul>
+                      
                     </div>
                     <hr class="page-divider"/>
 
@@ -73,6 +71,10 @@
                     <hr class="page-divider small"/>
 
                     <table>
+                        <tr>
+                            <td class="title">User Owner:</td>
+                            <td>{{ $name }} - <a  href="{{ route('reviews',['user_id'=>$user_id ]) }}">Reviews</a> </td>
+                        </tr>
                         <tr>
                             <td class="title">Car condition:</td>
                             <td>{{ $car_condition }} </td>
@@ -135,20 +137,32 @@
                         </tr>
                        
                     </table>
-                    <div class="buttons">
-                        <a herf="" class="btn btn-theme btn-cart btn-icon-left" onclick="confirm('Are you sure, You want to download the file') || event.stopImmediatePropagation()"  wire:click.prevent="download( {{ $ad_id }})" style="margin-left:10px "> 
-                            Check up 
-                        </a>
+                    <hr class="page-divider small"/>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="buttons">
+                                <a herf="" class="btn btn-theme btn-theme-transparent" onclick="confirm('Are you sure, You want to download the file') || event.stopImmediatePropagation()"  wire:click.prevent="download( {{ $ad_id }})" > 
+                                    Check up 
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            @if(Route::has('login'))
+                            @auth
+                                @if ($user_id != Auth::user()->id)
+                                    <div class="buttons">
+                                        <a class="btn btn-theme btn-theme-transparent" href="{{ route('user.Chat',['user_id'=>$user_id ]) }}">Contact</a>
+                                    </div>
+                                @endif                                    
+                            @endauth
+                        @endif
+                        </div>
+
                     </div>
-                    @if(Route::has('login'))
-                        @auth
-                            @if ($Ad->user_id != Auth::user()->id)
-                                <div class="buttons">
-                                    <a class="btn btn-theme btn-theme-transparent" href="{{ route('user.Chat',['user_id'=>$Ad->user_id ]) }}">Contact</a>
-                                </div>
-                            @endif                                    
-                        @endauth
-                    @endif
+                  
+                  
+                   
                     <hr class="page-divider small"/>
                     
                    
